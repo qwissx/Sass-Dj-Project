@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "saas-project"
+version = "0.1.0"
+package-mode = false
+
+
+[project]
+name = "saas-dj-project"
+version = "0.1.0"
+description = "Django project for intership in DstLab"
+authors = [
+    {name = "qwissx",email = "borutenkobogdan@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django (>=5.1.7,<6.0.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+    "python-dotenv (>=1.1.0,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

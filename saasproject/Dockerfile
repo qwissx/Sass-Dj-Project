@@ -1,0 +1,19 @@
+FROM python:3.12-slim
+
+RUN mkdir /app
+
+WORKDIR /app
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1 
+
+RUN pip install poetry
+
+COPY pyproject.toml poetry.lock /app
+
+RUN poetry config virtualenvs.create false
+RUN poetry install
+
+COPY . /app
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
